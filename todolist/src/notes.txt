@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+
+<img alt="avatar" src={faker.image.image()} />
+
+<img alt="avatar" src='https://source.unsplash.com/random' />
+

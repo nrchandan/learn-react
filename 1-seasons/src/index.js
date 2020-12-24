@@ -26,7 +26,6 @@ class App extends React.Component {
     
     if (this.state.latitude) {
       return <SeasonDisplay lat={ this.state.latitude }></SeasonDisplay>
-      // return <div>Latitude: {this.state.latitude} </div>;
     }
     
     return <Spinner>Please allow location access</Spinner>;

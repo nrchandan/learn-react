@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 import Accordion from './Accordion';
 import Search from './Search';
 import Dropdown from './Dropdown';
 import Translate from './Translate';
-import Route from './Route';
 import Header from './Header';
+
 
 const App = () => {
 
@@ -20,26 +22,31 @@ const App = () => {
       description: "Lets us create complex web applications"
     }
   ]
+
   return (
     <div>
-      <Header />
-      <Route path="/">
-        <Accordion items={items}/>
-      </Route>
-      <Route path="/list">
-        <Search></Search>
-      </Route>
-      <Route path="/dropdown">
-        <Dropdown
-          label="Select a color"
-          items={colorOptions}
-          selected={selected}
-          setSelected={setSelected}>
-        </Dropdown>        
-      </Route>
-      <Route path="/translate">
-        <Translate></Translate>
-      </Route>
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Route path="/" exact>
+            <Accordion items={items}/>
+          </Route>
+          <Route path="/list">
+            <Search></Search>
+          </Route>
+          <Route path="/dropdown">
+            <Dropdown
+              label="Select a color"
+              items={colorOptions}
+              selected={selected}
+              setSelected={setSelected}>
+            </Dropdown>        
+          </Route>
+          <Route path="/translate">
+            <Translate></Translate>
+          </Route>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
